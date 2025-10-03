@@ -1,0 +1,40 @@
+
+@theme {
+    /**fonts**/
+    --font-poppins: "Poppins", sans-serif; 
+    --font-inter: "Inter", sans-serif;
+}
+
+
+/** calendar css **/
+.fc .fc-toolbar.fc-header-toolbar {
+    @apply mb-2 md:mb-4;
+}
+
+.fc .fc-toolbar-title {
+    @apply font-inter text-lg sm:text-xl  lg:text-2xl;
+}
+
+.fc .fc-button {
+    @apply font-inter text-xs md:text-base relative before:content-[''] before:absolute before:-top-2 before:-bottom-2 before:-left-0 before:-right-0 before:bg-transparent md:before:content-none;
+}
+
+/** making calendar responsive **/
+.fc-daygrid-event {
+    @apply text-[10px] sm:text-[10px] md:text-xs lg:text-sm;
+}
+
+/* Styles for screens smaller than 768px */
+@media screen and (max-width: 640px) {
+  .fc-daygrid-event-dot {
+    --fc-daygrid-event-dot-width: 6px; /* Smaller dot on mobile */
+  }
+}
+
+.fc-daygrid-event-harness {
+    @apply cursor-pointer;
+}
+
+.fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start {
+    @apply mx-0 mt-[3px] sm:mt-[1px];
+}
