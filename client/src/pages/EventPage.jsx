@@ -89,7 +89,7 @@ function EventPage() {
                             <h3 title="event info" className="font-poppins text-sm sm:text-lg md:text-2xl font-normal whitespace-normal">
                                 {`${eventInfo.date.getDate()}/${eventInfo.date.getMonth()+1}/${eventInfo.date.getFullYear()}`}    •    {getTimeOfEvent(eventInfo.startTime, eventInfo.endTime)}    •    {eventInfo.venue}
                             </h3>
-                            <div id="bookmark" className='w-full flex justify-center pt-2 lg:pt-5'>
+                            <div id="bookmark" className='w-full flex flex-col items-center justify-center pt-2 lg:pt-5'>
                                 <button title="bookmark" className={`font-inter text-sm sm:text-base xl:text-lg py-0 px-0 sm:py-1 sm:px-3 min-h-8 sm:min-h-9 w-35 sm:w-40 xl:w-45 rounded-full  border-white border
                                     ${bookmarked ? `bg-white text-[#1a1a1a] ${(user.userType === "student" && eventInfo.upcoming) ? 'cursor-pointer lg:hover:bg-[#1a1a1a] lg:hover:border lg:hover:border-white lg:hover:text-white active:scale-95':'cursor-not-allowed'}`:
                                         `bg-[#1a1a1a] text-white ${(user.userType === "student" && eventInfo.upcoming) ? 'cursor-pointer lg:hover:bg-white lg:hover:border lg:hover:border-[#1a1a1a] lg:hover:text-[#1a1a1a] active:scale-95':'cursor-not-allowed'}`
@@ -100,6 +100,21 @@ function EventPage() {
                                     }):null}>
                                     Bookmarks: {eventInfo.bookmark}
                                 </button>
+                                {user.userType === "club" && <p className="italic font-inter text-[8px] md:text-[10px] font-normal mt-1.5 flex">
+                                        <span className="flex flex-col justify-start">*</span>
+                                        Clubs cannot bookmark
+                                    </p>
+                                }
+                                {user.userType === "student" && !eventInfo.upcoming && <p className="italic font-inter text-[8px] md:text-[10px] font-normal mt-1.5 flex">
+                                        <span className="flex flex-col justify-start">*</span>
+                                        Past events cannot be bookmarked
+                                    </p>
+                                }
+                                {user.userType === "student" && eventInfo.upcoming && <p className="italic font-inter text-[8px] md:text-[10px] font-normal mt-1.5 flex">
+                                        <span className="flex flex-col justify-start">*</span>
+                                        Click above to bookmark
+                                    </p>
+                                }
                             </div>
                     </div>
                 </section>

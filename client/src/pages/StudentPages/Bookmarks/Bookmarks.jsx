@@ -42,6 +42,11 @@ function BookMarks() {
                 </div>
             }
             <div id="main-container" className="w-[90%] max-w-[640px] ">
+                {data.length === 0 &&
+                    <div className="mt-20 flex items-center justify-center font-inter">
+                        No Bookmarks found!
+                    </div>
+                }
                 {data.map(function (event) {
                     return (
                         <div id="event-container" key={event.id} className="grid grid-cols-[9fr_1fr] inset-shadow-xs p-3 overflow-y-auto" ref={event.first_event_id ? firstUpcomingRef:null}>

@@ -11,7 +11,7 @@ const pool = new Pool({
         rejectUnauthorized: false,
     },
     max: 10,
-    idleTimeoutMillis: 10000, // close idle clients after 10 second
+    idleTimeoutMillis: 30000, // close idle clients after 10 second
     connectionTimeoutMillis: 60000, // return an error after 5 second if connection could not be established
     maxUses: 7500,
 });

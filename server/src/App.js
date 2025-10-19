@@ -13,6 +13,7 @@ const app = express();
 app.set('trust proxy', 1);
 app.use(cors({
     origin: "https://clubhub-steel.vercel.app",
+    // origin: "http://localhost:5173",
     credentials: true,
 }));
 app.use(express.json());

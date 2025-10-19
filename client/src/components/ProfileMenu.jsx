@@ -142,7 +142,7 @@ function ProfileMenu() {
             {open && !userType &&
                 <div className='p-2 bg-white inset-shadow-xs shadow-md rounded-xl z-10 absolute right-[-8px] sm:right-[-12px] md:right-[-32px] top-13.5 lg:top-15  w-fit flex flex-col items-center sm:gap-1 '>
                     <button id='logout' className='font-inter text-sm xl:text-base bg-black text-white py-0 px-0 sm:py-1 sm:px-2 min-h-7 sm:min-h-4
-                        w-20 sm:w-24 rounded-3xl cursor-pointer active:scale-95 active:bg-red-600 lg:hover:bg-red-600' onClick={() => navigate("/")}>
+                        w-20 sm:w-24 rounded-3xl cursor-pointer active:scale-95 active:bg-white-600 lg:hover:bg-white active:text-black lg:hover:text-black lg:hover:border active:border' onClick={() => navigate("/")}>
                             Login
                     </button>
                 </div>
